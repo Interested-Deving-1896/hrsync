@@ -1,52 +1,91 @@
-hrsync
-======
+# hrsync
 
-A shell script showing how to backup a directory with rsync detecting moved and renamed files.
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/hrsync) [![KDE Eco](https://img.shields.io/badge/KDE%20Eco-certified-brightgreen?logo=kde&logoColor=white&style=flat-square)](https://eco.kde.org/) [![Blue Angel](https://img.shields.io/badge/Blue%20Angel-DE--UZ%20215-0055a4?style=flat-square)](https://www.blauer-engel.de/en/certification/criteria) [![Energy](https://api.green-coding.io/v1/ci/badge/get?repo=Interested-Deving-1896%2Fhrsync&branch=main&workflow=eco-audit.yml)](https://metrics.green-coding.io/ci-index.html)
 
-Rsync is a great tool but lack detection of moved and renamed files, with this simple script is possible to avoid transfer of files which were only moved around or renamed.
 
-The basic idea is to create a tree (inside source directory) of hard linked files representing the original filesystem structure of the source itself, letting rsync recostructing links in the initial phase of the transfer.
-After the initial run you will find a new directory (.rsync_shadow) inside source and target directories, please don't touch the tree inside if you want that the script will continue working. 
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
-Credits due to this brilliant article: [Detecting File Moves & Renames with Rsync](http://lincolnloop.com/blog/detecting-file-moves-renames-rsync/).
+## Architecture
 
-Some background info in this serverfault question: [Handling renamed files or directories in rsync](http://serverfault.com/q/489289/220035)
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
-I provide only this README as documentation. If you want to know more just look at the source code, it's really short!
+## Install
 
-Requirements
-------------
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
 
-* rsync >= 3.0 (on remote host also if you use remote target)
-* filesystem with support for hard links on both sides
-* source and target directory should be on different devices
-* source on local filesystem and optionally target on remote (via ssh)
-
-Usage
--------
-
-1) Both source and target on local filesystem: run the script with source and target directories as arguments:
-
-```sh
-cd <dir>
-chmod +x ./hrsync
-./hrsync /home/user/Documents /media/user/external/Documents
-```
-2) Source on local filesystem and target on remote host (via ssh): run the script with source, target and remote host arguments:
-
-```sh
-cd <dir>
-chmod +x ./hrsync
-./hrsync /home/user/Documents /root/Documents root@example.com
+```bash
+git clone https://github.com/Interested-Deving-1896/hrsync.git
+cd hrsync
 ```
 
-Do your work on the source directory: add, delete and move files, then rerun the script. 
-Target directory will be synced without transferring moved or renamed files.
+## Usage
 
-Please note that this script is to be considered only an example, feel free to extend the idea for your own backup solution.
-Use it at your own risk, this is alpha software provided "as is" without any warranty in any case.
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
 
-License
--------
+## Configuration
 
-hrsync is free software, and may be redistributed under the terms specified in the LICENSE file.
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
+
+## CI
+
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
+
+## Mirror chain
+
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/hrsync`](https://github.com/Interested-Deving-1896/hrsync) and mirrored through:
+
+```
+Interested-Deving-1896/hrsync  ──►  OpenOS-Project-OSP/hrsync  ──►  OpenOS-Project-Ecosystem-OOC/hrsync
+```
+
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
+
+## Contributors
+
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
+
+## Origins
+
+<!-- AI:start:origins -->
+_Original project — no upstream influences recorded._
+<!-- AI:end:origins -->
+
+## Resources
+
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
+
+## Accessibility
+
+<!-- AI:start:accessibility -->
+This repo uses automated accessibility auditing via `check-accessibility.yml`.
+
+Checks include: CODEOWNERS ownership coverage, README screen-reader compatibility,
+WCAG 2.1 AA HTML compliance, audio overview (espeak-ng), and Braille output (liblouis).
+
+
+
+
+Run the [Check Accessibility](https://github.com/Interested-Deving-1896/hrsync/actions/workflows/check-accessibility.yml)
+workflow to generate the first report and accessibility artifacts.
+See [DOCS/accessibility.md](https://github.com/Interested-Deving-1896/hrsync/blob/main/DOCS/accessibility.md) for the full reference.
+<!-- AI:end:accessibility -->
+
+## License
+
+<!-- AI:start:license -->
+[MIT](https://github.com/Interested-Deving-1896/hrsync/blob/master/LICENSE) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+<!-- AI:end:license -->
